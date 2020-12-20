@@ -1,0 +1,15 @@
+{
+  "name": "learning-GraphQL",
+  "version": "1.0.0",
+  "description": "Movie API with GraphQL",
+  "main": "index.ts",
+  "repository": "https://github.com/happyjy/learning-GraphQL",
+  "author": "happyjy <okwoyjy@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3"
+  },
+  "scripts": {
+    "start": "nodemon"
+  }
+}
