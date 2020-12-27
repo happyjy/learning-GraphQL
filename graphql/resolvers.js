@@ -1,5 +1,6 @@
 import { peopleList, getById, 
-  getMovieById, getMovies, deleteMovie } from "./dummyData";
+  getMovieById, getMovies, 
+  addMovie, deleteMovie } from "./dummyData";
 
 /**
  * # schema
@@ -27,9 +28,7 @@ import { peopleList, getById,
  *  
  */
 
-
-
-const resolvers = {
+const resolvers = { 
   Query: {
     hello: (_, { name }) => `Hello ${name || 'World'}`,
     
@@ -44,9 +43,9 @@ const resolvers = {
     // deleteMovie: (_, { id }) => deleteMovie(id),
   },
   
-  // Mutation: {
-  //   addMovie: (_, { }) => {}
-  // }
+  Mutation: {
+    addMovie: (_, { name, score }) => addMovie(name, score)
+  }
 }
 
 export { resolvers };
