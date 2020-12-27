@@ -1,0 +1,10 @@
+type Jyoon {
+  name: String!
+  age: Int!
+  gender: String!
+}
+
+type Query {
+  hello(name: String): String!,
+  person: Jyoon!
+} 
