@@ -5,8 +5,16 @@ type Jyoon {
   gender: String!
 }
 
+type Movie {
+  id: Int
+  name: String!
+  score: Int!
+}
+
 type Query {
-  hello(name: String): String!,
-  people: [Jyoon]!
+  hello(name: String): String!
   person(id: Int!): Jyoon!
-} 
+  people: [Jyoon]!
+  movie(id: Int!): Movie
+  movies: [Movie]
+}

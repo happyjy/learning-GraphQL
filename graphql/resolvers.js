@@ -1,4 +1,6 @@
-import { peopleList, getById } from "./dummyData";
+import { peopleList, getById, 
+  getMovieById, getMovies, deleteMovie } from "./dummyData";
+
 /**
  * # schema
  *    - req에 대한 res type 스펙을 작성
@@ -14,6 +16,12 @@ import { peopleList, getById } from "./dummyData";
  *  * 원하는 대로 프로그램이 할 수 있는 부분
  *  * 메모리, 다른 api로 갈 수 있음.
  * 
+ * ## Query 
+ *  * select  
+ * 
+ * ## Mutation
+ *  * creat, update, delete
+ * 
  * # GraphQL은 specification을 서버에 정의해 놓고 있다. 
  *  그래서 GraphQL 서버에서 할 작업은 어떤 Query, Mutation을 가졌는지 알려 주는 것이다.
  *  
@@ -24,12 +32,21 @@ import { peopleList, getById } from "./dummyData";
 const resolvers = {
   Query: {
     hello: (_, { name }) => `Hello ${name || 'World'}`,
+    
+    person: (_, { id }) => getById(id),
     people: () => {
       console.log("### arguments: ", arguments[1]);
       return peopleList;
     },
-    person: (_, { id }) => getById(id)
-  }
+    
+    movie: (_, { id }) => getMovieById(id),
+    movies: () => getMovies(),
+    // deleteMovie: (_, { id }) => deleteMovie(id),
+  },
+  
+  // Mutation: {
+  //   addMovie: (_, { }) => {}
+  // }
 }
 
 export { resolvers };

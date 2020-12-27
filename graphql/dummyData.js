@@ -1,4 +1,4 @@
-export const peopleList = [
+const peopleList = [
   {
     id: 0,
     name: "jyoon", 
@@ -19,6 +19,39 @@ export const peopleList = [
   } 
 ];
 
-export const getById = id => {
+const getById = id => {
   return peopleList.filter(person => id === person.id)[0];
 }
+
+let movies = [
+  {
+    id: 0,
+    name: "Avengers - The new one",
+    score: 8
+  },
+  {
+    id: 1,
+    name: "The noteBook",
+    score: 9
+  },
+  {
+    id: 2,
+    name: "Logan",
+    score: 7
+  }
+]
+
+const getMovieById = id => movies.filter( movie => movie.id === id )[0];
+const getMovies = () => movies;
+// const deleteMovie = id => {
+//   const cleanedMovies = movies.filter(movie => movie.id !== id);
+//   if( moveis.length > cleanedMovies.length ){
+//     movies = cleanedMovies;
+//     return true; 
+//   } else {
+//     return false;
+//   }
+// }
+
+export { peopleList, getById }
+export { getMovies, getMovieById, /* deleteMovie */ }
