@@ -1,4 +1,5 @@
 type Jyoon {
+  id: Int
   name: String!
   age: Int!
   gender: String!
@@ -6,5 +7,6 @@ type Jyoon {
 
 type Query {
   hello(name: String): String!,
-  person: Jyoon!
+  people: [Jyoon]!
+  person(id: Int!): Jyoon!
 } 

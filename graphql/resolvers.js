@@ -1,3 +1,4 @@
+import { peopleList, getById } from "./dummyData";
 /**
  * # schema
  *    - req에 대한 res type 스펙을 작성
@@ -18,17 +19,17 @@
  *  
  */
 
-const Jyoon = {
-  name: "jyoon", 
-  age: 32,
-  gender: 'male'
-} 
+
 
 const resolvers = {
   Query: {
     hello: (_, { name }) => `Hello ${name || 'World'}`,
-    person: () => Jyoon
-  },
+    people: () => {
+      console.log("### arguments: ", arguments[1]);
+      return peopleList;
+    },
+    person: (_, { id }) => getById(id)
+  }
 }
 
 export { resolvers };
