@@ -2,7 +2,7 @@ import { peopleList, getById,
   getMovieById, getMovies, 
   addMovie, deleteMovie } from "./dummyData";
 
-import { getYtsMovieById, getYtsMovies } from "./movieAPI"; 
+import { getYtsMovieById, getYtsMovies, getYtsSuggestions } from "./movieAPI"; 
 
 /**
  * # schema
@@ -43,12 +43,9 @@ const resolvers = {
     movie: (_, { id }) => getMovieById(id),
     movies: () => getMovies(),
 
-    movie: (_, { id }) => getMovieById(id),
-    movies: () => getMovies(),
-
     ytsMovie: (_, { id }) => getYtsMovieById(id),
     ytsMovies: (_, { limit, rating }) => getYtsMovies(limit, rating),
-    
+    ytsSuggestions: (_, { id }) => getYtsSuggestions(id)    
   },
   
   Mutation: {

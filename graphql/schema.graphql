@@ -30,6 +30,7 @@ type Query {
 
   ytsMovie(id: Int!): ytsMovie
   ytsMovies(limit: Int, rating: Float): [ytsMovie]!
+  ytsSuggestions(id: Int!): [ytsMovie]!
 }
 
 type Mutation {
