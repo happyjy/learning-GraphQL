@@ -37,14 +37,14 @@ const resolvers = {
       console.log("### arguments: ", arguments[1]);
       return peopleList;
     },
-    
     movie: (_, { id }) => getMovieById(id),
     movies: () => getMovies(),
-    // deleteMovie: (_, { id }) => deleteMovie(id),
+    
   },
   
   Mutation: {
-    addMovie: (_, { name, score }) => addMovie(name, score)
+    addMovie: (_, { name, score }) => addMovie(name, score),
+    deleteMovie: (_, { id }) => deleteMovie(id) 
   }
 }
 
