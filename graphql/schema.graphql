@@ -11,12 +11,25 @@ type Movie {
   score: Int!
 }
 
+type ytsMovie {
+  id: Int!
+  title: String!
+  rating: Float!
+  summary: String
+  language: String!
+  dedium_cover_image: String!
+}
+
 type Query {
   hello(name: String): String!
   person(id: Int!): Jyoon!
   people: [Jyoon]!
+  
   movie(id: Int!): Movie
   movies: [Movie]
+
+  ytsMovie(id: Int!): ytsMovie
+  ytsMovies(limit: Int, rating: Float): [ytsMovie]!
 }
 
 type Mutation {

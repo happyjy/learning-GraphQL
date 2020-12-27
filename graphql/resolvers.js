@@ -2,6 +2,8 @@ import { peopleList, getById,
   getMovieById, getMovies, 
   addMovie, deleteMovie } from "./dummyData";
 
+import { getYtsMovieById, getYtsMovies } from "./movieAPI"; 
+
 /**
  * # schema
  *    - req에 대한 res type 스펙을 작성
@@ -29,7 +31,7 @@ import { peopleList, getById,
  */
 
 const resolvers = { 
-  Query: {
+  Query: { 
     hello: (_, { name }) => `Hello ${name || 'World'}`,
     
     person: (_, { id }) => getById(id),
@@ -37,8 +39,15 @@ const resolvers = {
       console.log("### arguments: ", arguments[1]);
       return peopleList;
     },
+ 
     movie: (_, { id }) => getMovieById(id),
     movies: () => getMovies(),
+
+    movie: (_, { id }) => getMovieById(id),
+    movies: () => getMovies(),
+
+    ytsMovie: (_, { id }) => getYtsMovieById(id),
+    ytsMovies: (_, { limit, rating }) => getYtsMovies(limit, rating),
     
   },
   
