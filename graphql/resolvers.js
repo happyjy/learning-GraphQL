@@ -36,7 +36,7 @@ const resolvers = {
     
     person: (_, { id }) => getById(id),
     people: () => {
-      console.log("### arguments: ", arguments[1]);
+      console.log("### arguments: ", arguments[1]); 
       return peopleList;
     },
  

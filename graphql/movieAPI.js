@@ -24,7 +24,7 @@ const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 //     .then(json => json.data.movies);
 // };
 
-export const getYtsMovies = async (limit, rating) => {
+export const getYtsMovies = async (limit = 20, rating = 8) => {
   const {
     data: {
       data: { movies }
@@ -35,6 +35,8 @@ export const getYtsMovies = async (limit, rating) => {
       minimum_rating: rating
     }
   });
+
+  console.log(`### getYtsMovies: ` + {limit, rating})
   return movies;
 };
 
@@ -48,6 +50,11 @@ export const getYtsMovieById= async id => {
       movie_id: id
     }
   });
+
+  console.log(`### getYtsMovieById: ` + id)
+  console.log(typeof id);
+  console.log(typeof +id);
+  console.log(typeof parseInt(id));
   return movie;
 };
 
